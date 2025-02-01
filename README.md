@@ -4,7 +4,7 @@ This project implements an object detection model using a hybrid **CNN + Transfo
 
 ## Dataset and Preprocessing  
 - The **KITTI dataset** was used, containing labeled images for object detection.  
-- A subset of **1000 samples** was selected for training to balance computational efficiency and performance.  
+- A subset of **5000 samples** was selected for training to balance computational efficiency and performance.  
 - Images were resized to **224x224 pixels**, and bounding box coordinates were normalized between **0 and 1**.  
 - **Data Augmentation** was applied, including random rotation, horizontal flipping, and width/height shifts.
 
@@ -23,7 +23,7 @@ The model consists of two main components:
    - The output layer consists of **4 neurons (x1, y1, x2, y2)**, each activated with **sigmoid** to keep values between 0 and 1.
 
 ## Training Details  
-- The model was trained for **20 epochs** with a batch size of **32**.  
+- The model was trained for **40 epochs** with a batch size of **32**.  
 - **Mean Squared Error (MSE)** was used as the loss function.  
 - The optimizer was **Adam** with a learning rate of **1e-4**.  
 - **Early stopping** was implemented to prevent overfitting, stopping training if validation loss did not improve for **5 consecutive epochs**.  
@@ -36,7 +36,7 @@ The model consists of two main components:
 
 ## How to Continue Analysis  
 - If deeper analysis is required, users can:  
-  - Increase the dataset size beyond **1000 samples** to improve generalization.  
+  - Increase the dataset size beyond **5000 samples** to improve generalization.  
   - Fine-tune the learning rate and batch size for better convergence.  
   - Modify the Transformer block’s hyperparameters (number of heads, embedding dimension).  
   - Experiment with different CNN architectures, such as **ResNet50** or **EfficientNet**.
